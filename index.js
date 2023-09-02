@@ -1,6 +1,14 @@
 class AddNumber {
-  constructor(selector, number) {
+  constructor(selector, startNumber, step) {
     this.btn = document.querySelector(selector);
-    li.textContent = number;
+    this.number = startNumber;
+    this.step = step;
+    this.btn.addEventListener("click", this.addElement.bind(this));
+  }
+  addElement() {
+    const div = document.createElement("div");
+    div.textContent = this.number;
+    this.number += this.step;
+    document.body.appendChild(div);
   }
 }
